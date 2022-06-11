@@ -30,7 +30,7 @@ interface Props {
 const Button = ({ req, setRes }: Props) => {
   const detection = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/model?data=${req}`);
+      const res = await axios.get(`https://cs376-server.herokuapp.com/model?data=${req}`);
 
       console.log(res);
 
