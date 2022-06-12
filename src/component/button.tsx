@@ -40,7 +40,8 @@ const Button = ({ req, setRes }: Props) => {
         req: req,
         index: res.data.index,
         result: res.data.result
-      });
+      }
+      );
     } catch (error) {
       console.log(error);
     }
