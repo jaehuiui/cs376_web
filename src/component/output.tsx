@@ -66,8 +66,8 @@ const Output = ({ res, req }: Props) => {
     <Container>
       <Header>Detection Result</Header>
       <ResponseWrapper>
-          {res?.result === 0 && <span className="title">{res?.result ===  0 && 'Not a hate speech!'}</span>}
-          {res?.result === 1 && <span className="title">{res?.result ===  1 && 'Hate speech!'}</span>}
+          {res?.result === 0 && <span className="title">Hate speech!</span>}
+          {res?.result === 1 && <span className="title">Not a hate speech!</span>}
           <div className="result">
               {res?.req.split(' ').map(((token, idx) => {
                   if(token) {
