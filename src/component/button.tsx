@@ -35,7 +35,12 @@ const Button = ({ req, setRes }: Props) => {
 
       console.log(res);
 
-      setRes(res.data as IRes);
+      // setRes(res.data as IRes);
+      setRes({
+        req: req,
+        index: res.data.index,
+        result: res.data.result
+      });
     } catch (error) {
       console.log(error);
     }

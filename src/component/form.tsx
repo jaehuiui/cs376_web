@@ -32,6 +32,7 @@ const ButtonWrapper = styled.div`
 export interface IRes {
     result: number | string;
     index: number[];
+    req : string;
 }
 
 const Form = () => {

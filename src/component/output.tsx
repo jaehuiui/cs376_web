@@ -40,8 +40,11 @@ const Output = ({ res, req }: Props) => {
   return (
     <Container>
       <Header>Detection Result</Header>
-      <ResponseWrapper>{req || ''}
-        <p>{JSON.stringify(res)}</p>
+      <ResponseWrapper>
+        {res?.req || ''}
+          {res?.result === 0 && <p>{res?.result ===  0 && 'Not a hate speech'}</p>}
+          {res?.result === 1 && <p>{res?.result ===  1 && 'Hate speech'}</p>}
+          <p>{JSON.stringify(res?.index) || ''}</p>
       </ResponseWrapper>
     </Container>
   );
