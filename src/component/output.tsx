@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {IRes} from "./form";
 
 const Container = styled.div`
   width: calc(50% - 32px);
@@ -31,14 +32,17 @@ const ResponseWrapper = styled.div`
 `;
 
 interface Props {
-  res: string;
+  res?: IRes;
+  req: string;
 }
 
-const Output = ({ res }: Props) => {
+const Output = ({ res, req }: Props) => {
   return (
     <Container>
       <Header>Detection Result</Header>
-      <ResponseWrapper>{res || ''}</ResponseWrapper>
+      <ResponseWrapper>{req || ''}
+        <p>{JSON.stringify(res)}</p>
+      </ResponseWrapper>
     </Container>
   );
 };

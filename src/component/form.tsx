@@ -29,15 +29,20 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
+export interface IRes {
+    result: number | string;
+    index: number[];
+}
+
 const Form = () => {
   const [req, setReq] = useState<string>('');
-  const [res, setRes] = useState<string>('');
+  const [res, setRes] = useState<IRes>();
 
   return (
     <Container>
       <FormWrapper>
         <Input setReq={setReq} />
-        <Output res={res} />
+        <Output res={res} req={req} />
       </FormWrapper>
       <ButtonWrapper>
         <Button req={req} setRes={setRes} />

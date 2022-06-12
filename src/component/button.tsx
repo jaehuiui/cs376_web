@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import {IRes} from "./form";
 
 const Wrapper = styled.div`
   width: 200px;
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
 
 interface Props {
   req: string;
-  setRes: (res: string) => void;
+  setRes: (res: IRes) => void;
 }
 
 const Button = ({ req, setRes }: Props) => {
@@ -34,7 +35,7 @@ const Button = ({ req, setRes }: Props) => {
 
       console.log(res);
 
-      setRes(res.data as string);
+      setRes(res.data as IRes);
     } catch (error) {
       console.log(error);
     }
